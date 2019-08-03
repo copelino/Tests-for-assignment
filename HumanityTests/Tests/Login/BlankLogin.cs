@@ -20,7 +20,7 @@ namespace HumanityTests
 
             try
             {
-                //1. Navigate to Humanity
+                //1. Navigate to Humanityy
 
                 stepName = "1. Navigate to Humanity";
                 driver.Url = "http://www.humanity.com";
