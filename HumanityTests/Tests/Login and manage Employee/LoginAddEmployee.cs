@@ -11,7 +11,6 @@ namespace HumanityTests
 {
     public partial class MainFunction
     {
-
         [Test]
         public void LoginAddEmployee()
         {
@@ -86,7 +85,7 @@ namespace HumanityTests
                 Thread.Sleep(3000);
                 LogStatus.LogSuccess(stepName, testName, date);
 
-                // 7. Give Supervisor position to first employee
+                // 7. Give Supervisor position to first employee and verify that position is added
 
                 stepName = " 7. Give Supervisor position to first employee";
                 driver.FindElement(By.CssSelector(".employeesList>tbody>tr:nth-child(4)>td>a")).Click();
@@ -108,11 +107,10 @@ namespace HumanityTests
                 Assert.AreEqual(Name.ToLower(), ExpectedName.ToLower());
                 Thread.Sleep(2000);
                 string Position = driver.FindElement(By.CssSelector("#_cd_staff>div.right>div.staff-list>table>tbody>tr:nth-child(4)>td:nth-child(6)")).Text;
-                string ExpectedPosition = "Manager";
+                string ExpectedPosition = "Supervisor";
                 Assert.AreEqual(Position.ToLower(), ExpectedPosition.ToLower());
                 Thread.Sleep(2000);
                 LogStatus.LogSuccess(stepName, testName, date);
-
 
                 // 8. Clock out
 
@@ -131,7 +129,6 @@ namespace HumanityTests
                 driver.FindElement(By.CssSelector("#userm>div>div:nth-child(15)>a")).Click();
                 Thread.Sleep(5000);
                 LogStatus.LogSuccess(stepName, testName, date);
-
 
             }
             catch (Exception ex)

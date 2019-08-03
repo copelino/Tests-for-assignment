@@ -38,7 +38,7 @@ namespace HumanityTests
                 Thread.Sleep(10000);
                 LogStatus.LogSuccess(stepName, testName, date);
 
-                // 3. Clock in
+                // 3. Clock in and add note
 
                 stepName = "3. Clock in";
                 driver.FindElement(By.CssSelector("#topMenu>li:nth-child(3)")).Click();
@@ -70,9 +70,9 @@ namespace HumanityTests
                 Thread.Sleep(3000);
                 LogStatus.LogSuccess(stepName, testName, date);
 
-                // 5. Clock out
+                // 5. Add new Employee and test input fields
 
-                stepName = "5. Clock out";
+                stepName = "5. Add new Employee and test input fields";
                 driver.FindElement(By.CssSelector("#topMenu>li:nth-child(3)")).Click();
                 Thread.Sleep(6000);
                 string noteText = driver.FindElement(By.CssSelector("#tc_timeline>li>ul>li:nth-child(4)>div>span>span")).Text;
@@ -121,15 +121,20 @@ namespace HumanityTests
                 Thread.Sleep(3000);
                 driver.FindElement(By.CssSelector("#stafftl_>div")).Click();
                 Thread.Sleep(4000);
+                LogStatus.LogSuccess(stepName, testName, date);
+
+                //6. Clock out
+
+                stepName = "6. Clock out";
                 driver.FindElement(By.CssSelector("#topMenu>li:nth-child(3)")).Click();
                 Thread.Sleep(2000);
                 driver.FindElement(By.Id("tc_tl_co")).Click();
                 Thread.Sleep(2000);
                 LogStatus.LogSuccess(stepName, testName, date);
 
-                //6. Logout
+                //7. Logout
 
-                stepName = "6. Logout";
+                stepName = "7. Logout";
                 driver.FindElement(By.CssSelector("._navBottom>i")).Click();
                 Thread.Sleep(2000);
                 driver.FindElement(By.CssSelector("#userm>div>div:nth-child(15)>a")).Click();
